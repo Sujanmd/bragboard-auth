@@ -1,15 +1,16 @@
+import { DEPARTMENTS, EMPLOYEES, SHOUTOUTS } from "../../data/constants";
 function DashboardOverview() {
   return (
     <div>
        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         <div className="bg-green-100 p-6 rounded shadow flex items-center gap-4">
-          <span className="text-xl font-semibold">Departments: 3</span>
+          <span className="text-xl font-semibold">Departments: {DEPARTMENTS.length}</span>
         </div>
         <div className="bg-blue-100 p-6 rounded shadow flex items-center gap-4">
-          <span className="text-xl font-semibold">Employees: 30</span>
+          <span className="text-xl font-semibold">Employees: {EMPLOYEES.length}</span>
         </div>
         <div className="bg-yellow-100 p-6 rounded shadow flex items-center gap-4">
-          <span className="text-xl font-semibold">ShoutOuts: 11</span>
+          <span className="text-xl font-semibold">ShoutOuts: {SHOUTOUTS.length}</span>
         </div>
       </div>
       <div className="flex gap-4">

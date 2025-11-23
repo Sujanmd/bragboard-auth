@@ -1,3 +1,4 @@
+import { SHOUTOUTS, EMPLOYEES, computeTopTag } from "../../data/constants";
 function AnalyticsCards({ loading }) {
     if (loading) {
       // Animated Tailwind placeholders
@@ -17,15 +18,15 @@ function AnalyticsCards({ loading }) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white p-4 rounded shadow">
           <div className="text-gray-500">Total Shout-Outs</div>
-          <div className="text-2xl font-bold">1204</div>
+          <div className="text-2xl font-bold">{SHOUTOUTS.length}</div>
         </div>
         <div className="bg-white p-4 rounded shadow">
           <div className="text-gray-500">Top Tag</div>
-          <div className="text-2xl font-bold">Teamwork</div>
+          <div className="text-2xl font-bold">{computeTopTag(SHOUTOUTS)}</div>
         </div>
         <div className="bg-white p-4 rounded shadow">
           <div className="text-gray-500">Active Users</div>
-          <div className="text-2xl font-bold">157</div>
+          <div className="text-2xl font-bold">{EMPLOYEES.length}</div>
         </div>
       </div>
     );

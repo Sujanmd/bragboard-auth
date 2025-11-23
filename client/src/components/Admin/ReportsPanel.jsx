@@ -1,16 +1,21 @@
-function ReportsPanel({ loading }) {
-    if (loading) {
-      return (
-        <div className="animate-pulse bg-white p-4 rounded shadow h-24 w-full"></div>
-      );
-    }
-    return (
-      <div className="bg-white p-4 rounded shadow">
-        <div className="font-bold mb-2">Download Reports</div>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded mr-2">Export PDF</button>
-        <button className="bg-green-600 text-white px-4 py-2 rounded">Export CSV</button>
-      </div>
-    );
-  }
-  export default ReportsPanel;
-  
+import React from "react";
+import { SHOUTOUTS, getEmployeeName } from "../../data/constants"; // adjust path as needed
+
+function ShoutOuts() {
+  return (
+    <div className="bg-white p-4 rounded shadow mb-6">
+      <div className="font-bold mb-2">Recent ShoutOuts</div>
+      <ul>
+        {SHOUTOUTS.map(shout => (
+          <li key={shout.id}>
+            {shout.emoji}{" "}
+            {getEmployeeName(shout.from)} recognized {getEmployeeName(shout.to)} for <span className="italic">{shout.reason}</span>
+            {shout.tag ? <> (<span className="font-semibold">{shout.tag}</span>)</> : null}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default ShoutOuts;
