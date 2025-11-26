@@ -22,5 +22,6 @@ if (!container) {
   );
 }
 
-
+// If you want to start measuring performance, pass a function:
+// e.g. reportWebVitals(console.log);
 reportWebVitals();
